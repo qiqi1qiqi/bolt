@@ -1,8 +1,10 @@
 import { createAnthropic } from '@ai-sdk/anthropic';
 
-export function getAnthropicModel(apiKey: string) {
+// 增加一个参数用来接收环境变量
+export function getAnthropicModel(apiKey: string, baseUrl?: string) {
   const anthropic = createAnthropic({
     apiKey,
+    baseURL: baseUrl || 'https://api.anthropic.com/v1', // 如果变量没传，默认用官方的
   });
 
   return anthropic('claude-3-5-sonnet-20240620');
