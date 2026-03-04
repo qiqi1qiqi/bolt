@@ -1,9 +1,9 @@
 name = "new0bolt"
 compatibility_date = "2024-03-04"
 
-# 关键：添加服务端入口路径
-main = "functions/[[path]].ts" 
-
-# 如果你是纯静态部署，或者使用 Vite 插件处理，
-# 请确保 build 目录结构正确
+# 移除 main 字段，只保留 Pages 所需的输出目录
 pages_build_output_dir = "./build/client"
+
+# 如果你需要环境变量，可以在这里添加
+[vars]
+# NODE_VERSION = "20"
